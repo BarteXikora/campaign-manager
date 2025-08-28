@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.colors.white};
         color: ${({ theme }) => theme.colors.black};
         font-size: ${({ theme }) => theme.fontSizes.default};
+        font-family: "Figtree", sans-serif;
     }
 `
 

@@ -88,6 +88,15 @@ const StyledTagsInput = styled.div`
             &:hover {
                 background-color: ${({ theme }) => theme.colors.gray2};
             }
+
+            &.disabled {
+                color: ${({ theme }) => theme.colors.gray1};
+                cursor: not-allowed;
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
         }
     }
 `

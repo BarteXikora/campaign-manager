@@ -1,17 +1,18 @@
 import AppTheme from './theme/AppTheme'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Container from './components/layout/container/Container'
-import Header from './components/layout/header/Header'
-import ListHeader from './components/layout/listHeader/ListHeader'
-import List from './components/layout/list/List'
+import View from './components/layout/view/View'
+import ListScreen from './components/screens/listScreen/ListScreen'
 
 const App = () => {
   return <AppTheme>
-    <Container>
-      <Header />
-      <ListHeader />
-      <List />
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<View />}>
+          <Route path='/' element={<ListScreen />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </AppTheme>
 }
 

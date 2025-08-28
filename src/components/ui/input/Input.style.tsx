@@ -1,23 +1,37 @@
 import styled from 'styled-components'
 
-const StyledInput = styled.input`
-    font-size: ${({ theme }) => theme.fontSizes.small};
-    padding: ${({ theme }) => theme.spaces.medium} ${({ theme }) => theme.spaces.medium};
-    border: none;
+const StyledInput = styled.div`
+    display: flex;
     background-color: ${({ theme }) => theme.colors.gray3};
     border-radius: ${({ theme }) => theme.borderRadiuses.small};
-    outline: none;
     transition: ${({ theme }) => theme.transition};
+    cursor: text;
+    align-items: center;
 
-    &[type=number]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
+    input {
+        font-size: ${({ theme }) => theme.fontSizes.small};
+        border: none;
+        outline: none;
+        background-color: transparent;
+        width: 100%;
+        padding: ${({ theme }) => theme.spaces.medium} ${({ theme }) => theme.spaces.medium};
+
+        &[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    .unit {
+        padding-right: ${({ theme }) => theme.spaces.big};
+        font-size: ${({ theme }) => theme.fontSizes.default};
+        font-weight: bold;
     }
 
     &:hover {
         background-color: ${({ theme }) => theme.colors.gray2};
     }
 
-    &:focus {
+    &:focus-within {
         background-color: ${({ theme }) => theme.colors.secondary};
     }
 `

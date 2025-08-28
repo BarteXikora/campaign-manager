@@ -28,7 +28,7 @@ const spaces = {
     big: '22px',
     medium: '12px',
     small: '8px',
-    xSamll: '4px'
+    xSmall: '4px'
 }
 
 const borderRadiuses = {

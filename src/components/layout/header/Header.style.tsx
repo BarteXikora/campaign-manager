@@ -39,6 +39,24 @@ const StyledHeader = styled.header`
         padding: 0 ${({ theme }) => theme.spaces.big};
         border-radius: 0 ${({ theme }) => theme.borderradiuses.big} ${({ theme }) => theme.borderradiuses.big} 0;
     }
+
+    @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {
+        margin-top: 0;
+        border-radius: 0;
+
+        .logo {
+            padding: ${({ theme }) => theme.spaces.small};
+        }
+
+        .data-box {
+            display: none;
+        }
+
+        .emerald-account {
+            border-radius: 0;
+            padding: 0 ${({ theme }) => theme.spaces.small};
+        }
+    }
 `
 
 export default StyledHeader

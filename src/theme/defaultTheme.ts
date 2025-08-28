@@ -18,18 +18,20 @@ const colors = {
 }
 
 const fontSizes = {
-    title: '1.6rem',
-    default: '1.2rem',
-    small: '.9rem'
+    title: '1.25rem',
+    default: '1.06rem',
+    small: '.85rem'
 }
 
 const spaces = {
-    big: '30px',
-    medium: '22px',
-    small: '12px'
+    xBig: '30px',
+    big: '22px',
+    medium: '12px',
+    small: '8px',
+    xSmall: '4px'
 }
 
-const borderradiuses = {
+const borderRadiuses = {
     big: '14px',
     small: '7px'
 }
@@ -43,9 +45,9 @@ const defaultTheme = {
     colors,
     fontSizes,
     spaces,
-    borderradiuses,
+    borderRadiuses,
     screenBreakpoints,
-    transition: 'all .2s ease-in-out'
+    transition: 'all .1s ease-in-out'
 }
 
 export default defaultTheme

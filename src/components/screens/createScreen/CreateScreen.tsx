@@ -1,6 +1,10 @@
+import CreateFormHeader from '../../layout/createFormHeader/CreateFormHeader'
+
 const CreateScreen = () => {
     return (
-        <div>CreateScreen</div>
+        <>
+            <CreateFormHeader />
+        </>
     )
 }
 

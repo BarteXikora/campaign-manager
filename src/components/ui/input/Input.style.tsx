@@ -16,8 +16,12 @@ const StyledInput = styled.div`
         width: 100%;
         padding: ${({ theme }) => theme.spaces.medium} ${({ theme }) => theme.spaces.medium};
 
-        &[type=number]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
+        &[type=number] {
+            text-align: right;
+
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
         }
     }
 

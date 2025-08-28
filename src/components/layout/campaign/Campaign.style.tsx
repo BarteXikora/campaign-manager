@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const StyledCampaign = styled.li`
     background-color: ${({ theme }) => theme.colors.gray4};
-    padding: ${({ theme }) => theme.spaces.small} ${({ theme }) => theme.spaces.big};
+    padding: ${({ theme }) => theme.spaces.medium} ${({ theme }) => theme.spaces.xBig};
     border-radius: ${({ theme }) => theme.borderRadiuses.big};
     display: grid;
     align-items: center;
@@ -14,18 +14,19 @@ const StyledCampaign = styled.li`
         font-size: ${({ theme }) => theme.fontSizes.title};
         font-style: italic;
         margin: 0;
+        margin-bottom: ${({ theme }) => theme.spaces.xSmall};
     }
 
     .tags {
         display: flex;
-        gap: ${({ theme }) => theme.spaces.small};
+        gap: ${({ theme }) => theme.spaces.xSmall};
         flex-wrap: wrap;
     }
 
     .tag {
         font-size: ${({ theme }) => theme.fontSizes.small};
         background-color: ${({ theme }) => theme.colors.gray3};
-        padding: 0 ${({ theme }) => theme.spaces.small};
+        padding: ${({ theme }) => theme.spaces.xSmall} ${({ theme }) => theme.spaces.small};
         border-radius: ${({ theme }) => theme.borderRadiuses.small};
     }
 
@@ -57,8 +58,8 @@ const StyledCampaign = styled.li`
     @media (max-width: ${({ theme }) => theme.screenBreakpoints.desktop}) {
         grid-template-columns: repeat(4, 1fr);
 
-        & > :nth-child(1) { grid-area: 1 / 1; grid-column: span 2; } 
-        & > :nth-child(6) { grid-area: 1 / 2; grid-column: span 2; } 
+        & > :nth-child(1) { grid-area: 1 / 1; grid-column: span 3; } 
+        & > :nth-child(6) { grid-area: 1 / 2; grid-column: span 1; } 
         & > :nth-child(2) { grid-area: 2 / 1; }
         & > :nth-child(3) { grid-area: 2 / 2; }
         & > :nth-child(4) { grid-area: 2 / 3; }
@@ -69,21 +70,21 @@ const StyledCampaign = styled.li`
             text-align: left;
         }
 
+        .name-tags, .action-box {
+            margin-bottom: ${({ theme }) => theme.spaces.medium};
+        }
+
         .action-box {
             justify-self: end;
         }
     }
 
     @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {
-        padding: ${({ theme }) => theme.spaces.small};
-        margin: 0 ${({ theme }) => theme.spaces.small};
-        margin-bottom: ${({ theme }) => theme.spaces.small};
+        padding: ${({ theme }) => theme.spaces.medium};
+        margin: 0 ${({ theme }) => theme.spaces.medium};
+        margin-bottom: ${({ theme }) => theme.spaces.medium};
         grid-template-columns: repeat(2, 1fr);
         gap: ${({ theme }) => theme.spaces.small};
-
-        .name-tags {
-            margin-bottom: ${({ theme }) => theme.spaces.medium};
-        }
 
         & > :nth-child(1) { grid-area: 1 / 1; } 
         & > :nth-child(6) { grid-area: 1 / 2; } 

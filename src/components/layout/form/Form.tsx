@@ -1,19 +1,29 @@
 import StyledForm from './Form.style'
 
+import Input from '../../ui/input/Input'
+import TagsInput from '../../ui/tagsInput/TagsInput'
+import Select from '../../ui/select/Select'
+
+import { useState } from 'react'
+
+const __datalist = ['Exaple', 'Test', 'Demo', 'Sample', 'Mockup', 'Prototype']
+
 const Form = () => {
+    const [keywords, setKeywords] = useState<string[]>([])
+
     return <StyledForm>
         <form>
             <section>
                 <label>
                     <span>Campaign name:</span>
-                    <input type="text" />
+                    <Input />
                 </label>
             </section>
 
             <section>
                 <label>
-                    <span>Tags:</span>
-                    <input type="text" />
+                    <span>Keywords:</span>
+                    <TagsInput datalist={__datalist} selectedTags={keywords} setSelectedTags={setKeywords} />
                 </label>
             </section>
 
@@ -21,14 +31,14 @@ const Form = () => {
                 <div>
                     <label>
                         <span>Bid amount:</span>
-                        <input type="number" />
+                        <Input type='number' $unit='$' />
                     </label>
                 </div>
 
                 <div>
                     <label>
                         <span>Campaign founds:</span>
-                        <input type="number" />
+                        <Input type='number' $unit='$' />
                     </label>
                 </div>
             </section>
@@ -37,14 +47,20 @@ const Form = () => {
                 <div>
                     <label>
                         <span>Town:</span>
-                        <select></select>
+                        <Select>
+                            <option value="new_york">New York</option>
+                            <option value="los_angeles">Los Angeles</option>
+                            <option value="chicago">Chicago</option>
+                            <option value="houston">Houston</option>
+                            <option value="miami">Miami</option>
+                        </Select>
                     </label>
                 </div>
 
                 <div>
                     <label>
                         <span>Radius:</span>
-                        <input type="number" />
+                        <Input type='number' $unit='km' />
                     </label>
                 </div>
             </section>

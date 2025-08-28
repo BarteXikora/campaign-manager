@@ -40,7 +40,7 @@ const tertiaryStyles = css`
 const StyledButton = styled.button<TButton>`
     display: flex;
     padding: ${({ theme }) => theme.spaces.small} ${({ theme }) => theme.spaces.medium};
-    border-radius: ${({ theme }) => theme.borderradiuses.small};
+    border-radius: ${({ theme }) => theme.borderRadiuses.small};
     border: none;
     color: ${({ theme }) => theme.colors.black};
     font-weight: bold;

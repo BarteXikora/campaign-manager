@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const StyledCampaign = styled.li`
     background-color: ${({ theme }) => theme.colors.gray4};
     padding: ${({ theme }) => theme.spaces.small} ${({ theme }) => theme.spaces.big};
-    border-radius: ${({ theme }) => theme.borderradiuses.big};
+    border-radius: ${({ theme }) => theme.borderRadiuses.big};
     display: grid;
     align-items: center;
     grid-template-columns: 25% repeat(4, minmax(auto, 2fr)) 1fr;
@@ -26,7 +26,7 @@ const StyledCampaign = styled.li`
         font-size: ${({ theme }) => theme.fontSizes.small};
         background-color: ${({ theme }) => theme.colors.gray3};
         padding: 0 ${({ theme }) => theme.spaces.small};
-        border-radius: ${({ theme }) => theme.borderradiuses.small};
+        border-radius: ${({ theme }) => theme.borderRadiuses.small};
     }
 
     .data-box{

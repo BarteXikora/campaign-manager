@@ -31,7 +31,7 @@ const spaces = {
     xSamll: '4px'
 }
 
-const borderradiuses = {
+const borderRadiuses = {
     big: '14px',
     small: '7px'
 }
@@ -45,7 +45,7 @@ const defaultTheme = {
     colors,
     fontSizes,
     spaces,
-    borderradiuses,
+    borderRadiuses,
     screenBreakpoints,
     transition: 'all .1s ease-in-out'
 }

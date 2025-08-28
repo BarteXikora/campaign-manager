@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
     margin-bottom: ${({ theme }) => theme.spaces.big};
     background-color: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.white};
-    border-radius: ${({ theme }) => theme.borderradiuses.big};
+    border-radius: ${({ theme }) => theme.borderRadiuses.big};
 
     .logo {
         font-weight: bold;
@@ -45,7 +45,7 @@ const StyledHeader = styled.header`
         flex-direction: column;
         justify-content: center;
         padding: 0 ${({ theme }) => theme.spaces.xBig};
-        border-radius: 0 ${({ theme }) => theme.borderradiuses.big} ${({ theme }) => theme.borderradiuses.big} 0;
+        border-radius: 0 ${({ theme }) => theme.borderRadiuses.big} ${({ theme }) => theme.borderRadiuses.big} 0;
     }
 
     @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {

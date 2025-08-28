@@ -7,6 +7,18 @@ const StyledContainer = styled.div`
   .container {
     width: ${({ theme }) => theme.screenBreakpoints.desktop};
   }
+
+  @media (max-width: ${({ theme }) => theme.screenBreakpoints.desktop}) {
+    .container {
+      width: ${({ theme }) => theme.screenBreakpoints.tablet};
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {
+    .container {
+      width: 100%;
+    }
+  }
 `
 
 export default StyledContainer

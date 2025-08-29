@@ -7,7 +7,7 @@ const CreateActions = ({ isFormValid }: { isFormValid: boolean }) => {
     const navigate = useNavigate()
 
     return <StyledCreateActions>
-        <Button $variant='tertiary' onClick={() => navigate('/')}>Cancel</Button>
+        <Button $variant='tertiary' type='button' onClick={() => navigate('/')}>Cancel</Button>
         <Button $variant='primary' type='submit' disabled={!isFormValid}>Create new campaign</Button>
     </StyledCreateActions>
 }

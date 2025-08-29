@@ -2,16 +2,27 @@ import TitleBar from '../../layout/titleBar/TitleBar'
 import Form from '../../layout/form/Form'
 import CreateActions from '../../layout/createActions/CreateActions'
 
-import { useSelector } from '../../../store/store'
-import { useState, useEffect, useCallback } from 'react'
+import { useSelector, useDispatch } from '../../../store/store'
+import { addCampaign } from '../../../store/appSlice'
+import { useNavigate } from 'react-router-dom'
+import { useState, useEffect, useCallback, FormEvent } from 'react'
 import { TCampaign } from '../../../store/state.types'
 
 const CreateScreen = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const emeraldAccount = useSelector(state => state.emeraldAccount)
 
     const [isFormValid, setIsFormValid] = useState<boolean>(false)
     const [validationMessage, setValidationMessage] = useState<string>('')
     const [form, setForm] = useState<TCampaign>({ id: '', name: '', statusActive: true, bidAmount: 0, campaignFund: 0, town: 'Kraków', radius: 0, tags: [] })
+
+    const handleSubmit = (event: FormEvent) => {
+        event.preventDefault()
+        dispatch(addCampaign(form))
+        navigate('/')
+    }
 
     const validateForm = useCallback((): boolean => {
         let isOk = true
@@ -62,7 +73,7 @@ const CreateScreen = () => {
                 <h2>Create new campaign:</h2>
             </TitleBar>
 
-            <form>
+            <form onSubmit={e => handleSubmit(e)}>
                 <Form values={form} setValues={setForm} validationMessage={validationMessage} />
                 <CreateActions isFormValid={isFormValid} />
             </form>

@@ -10,10 +10,20 @@ export const appSlice = createSlice({
 
         addCampaign: (state, action: PayloadAction<TCampaign>) => {
             return { ...state, campaigns: [{ ...action.payload, id: uuid() }, ...state.campaigns] }
+        },
+
+        editCampaign: (state, action: PayloadAction<TCampaign>) => {
+            const id = action.payload.id
+            return {
+                ...state,
+                campaigns: state.campaigns.map(c =>
+                    c.id === id ? action.payload : c
+                )
+            }
         }
 
     }
 })
 
 export default appSlice.reducer
-export const { addCampaign } = appSlice.actions
+export const { addCampaign, editCampaign } = appSlice.actions

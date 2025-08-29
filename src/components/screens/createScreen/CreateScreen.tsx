@@ -6,8 +6,10 @@ const CreateScreen = () => {
     return (
         <>
             <CreateFormHeader />
-            <Form />
-            <CreateActions />
+            <form>
+                <Form />
+                <CreateActions />
+            </form>
         </>
     )
 }

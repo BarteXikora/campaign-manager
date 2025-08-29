@@ -5,6 +5,7 @@ import View from './components/layout/view/View'
 import ListScreen from './components/screens/listScreen/ListScreen'
 import CreateScreen from './components/screens/createScreen/CreateScreen'
 import EditScreen from './components/screens/editScreen/EditScreen'
+import ConfirmRemoveScreen from './components/screens/confirmRemoveScreen/ConfirmRemoveScreen'
 
 const App = () => {
   return <AppTheme>
@@ -14,6 +15,7 @@ const App = () => {
           <Route path='/' element={<ListScreen />} />
           <Route path='/create' element={<CreateScreen />} />
           <Route path='/edit/:id' element={<EditScreen />} />
+          <Route path='/confirm-remove/:id' element={<ConfirmRemoveScreen />} />
         </Route>
       </Routes>
     </BrowserRouter>

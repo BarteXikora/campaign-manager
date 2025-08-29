@@ -22,7 +22,9 @@ const initialState: TState = {
             town: 'Cracow',
             radius: 5
         }
-    ]
+    ],
+    towns: [{ id: '0', name: 'Kraków' }, { id: '1', name: 'Warszawa' }, { id: '2', name: 'Gdańsk' }],
+    tags: ['Example', 'Tag', 'Names']
 }
 
 export default initialState

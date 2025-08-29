@@ -12,6 +12,8 @@ export type TCampaign = {
 type TState = {
     emeraldAccount: number
     campaigns: TCampaign[]
+    towns: { id: string, name: string }[]
+    tags: string[]
 }
 
 export default TState

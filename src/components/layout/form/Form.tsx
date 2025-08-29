@@ -4,25 +4,25 @@ import Input from '../../ui/input/Input'
 import TagsInput from '../../ui/tagsInput/TagsInput'
 import Select from '../../ui/select/Select'
 
-import { useState } from 'react'
+import { useSelector } from '../../../store/store'
+import TFormProps from './Form.types'
 
-const __datalist = ['Exaple', 'Test', 'Demo', 'Sample', 'Mockup', 'Prototype']
-
-const Form = () => {
-    const [keywords, setKeywords] = useState<string[]>([])
+const Form = ({ values, setValues, validationMessage }: TFormProps) => {
+    const tags = useSelector(state => state.tags)
+    const towns = useSelector(state => state.towns)
 
     return <StyledForm>
         <section>
             <label>
                 <span>Campaign name:</span>
-                <Input />
+                <Input value={values.name} onChange={e => setValues({ ...values, name: e.target.value })} />
             </label>
         </section>
 
         <section>
             <label>
                 <span>Keywords:</span>
-                <TagsInput datalist={__datalist} selectedTags={keywords} setSelectedTags={setKeywords} />
+                <TagsInput datalist={tags} selectedTags={values.tags} setSelectedTags={tags => setValues({ ...values, tags })} />
             </label>
         </section>
 
@@ -30,14 +30,24 @@ const Form = () => {
             <div>
                 <label>
                     <span>Bid amount:</span>
-                    <Input type='number' $unit='$' />
+                    <Input
+                        type='number'
+                        $unit='$'
+                        value={values.bidAmount}
+                        onChange={e => setValues({ ...values, bidAmount: Number(e.target.value) })}
+                    />
                 </label>
             </div>
 
             <div>
                 <label>
                     <span>Campaign founds:</span>
-                    <Input type='number' $unit='$' />
+                    <Input
+                        type='number'
+                        $unit='$'
+                        value={values.campaignFund}
+                        onChange={e => setValues({ ...values, campaignFund: Number(e.target.value) })}
+                    />
                 </label>
             </div>
         </section>
@@ -47,11 +57,11 @@ const Form = () => {
                 <label>
                     <span>Town:</span>
                     <Select>
-                        <option value="new_york">New York</option>
-                        <option value="los_angeles">Los Angeles</option>
-                        <option value="chicago">Chicago</option>
-                        <option value="houston">Houston</option>
-                        <option value="miami">Miami</option>
+                        <>
+                            {
+                                towns.map(town => <option key={town.id} value={town.name}>{town.name}</option>)
+                            }
+                        </>
                     </Select>
                 </label>
             </div>
@@ -59,9 +69,18 @@ const Form = () => {
             <div>
                 <label>
                     <span>Radius:</span>
-                    <Input type='number' $unit='km' />
+                    <Input
+                        type='number'
+                        $unit='km'
+                        value={values.radius}
+                        onChange={e => setValues({ ...values, radius: Number(e.target.value) })}
+                    />
                 </label>
             </div>
+        </section>
+
+        <section>
+            {validationMessage}
         </section>
     </StyledForm>
 }

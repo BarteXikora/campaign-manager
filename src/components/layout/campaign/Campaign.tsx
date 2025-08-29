@@ -1,8 +1,12 @@
 import StyledCampaign from './Campaign.style'
 import Button from '../../ui/button/Button'
-import TCampaignProps from './campaign.types'
+import { TCampaign } from './campaign.types'
 
-const Campaign = ({ name, tags, statusActive, bidAmount, campaignFund, town, radius }: TCampaignProps) => {
+import { useNavigate } from 'react-router-dom'
+
+const Campaign = ({ id, name, tags, statusActive, bidAmount, campaignFund, town, radius }: TCampaign) => {
+    const navigate = useNavigate()
+
     return <StyledCampaign>
         <div className="name-tags">
             <h3>{name}</h3>
@@ -34,7 +38,7 @@ const Campaign = ({ name, tags, statusActive, bidAmount, campaignFund, town, rad
         </div>
 
         <div className="data-box action-box">
-            <Button $variant='secondary'>Edit</Button>
+            <Button $variant='secondary' onClick={() => navigate(`/edit/${id}`)}>Edit</Button>
         </div>
     </StyledCampaign>
 }

@@ -5,11 +5,9 @@ import TagsInput from '../../ui/tagsInput/TagsInput'
 import Select from '../../ui/select/Select'
 
 import { useSelector } from '../../../store/store'
-import { useState } from 'react'
+import TFormProps from './Form.types'
 
-const Form = () => {
-    const [keywords, setKeywords] = useState<string[]>([])
-
+const Form = ({ values, setValues }: TFormProps) => {
     const tags = useSelector(state => state.tags)
     const towns = useSelector(state => state.towns)
 
@@ -17,14 +15,14 @@ const Form = () => {
         <section>
             <label>
                 <span>Campaign name:</span>
-                <Input />
+                <Input value={values.name} onChange={e => setValues({ ...values, name: e.target.value })} />
             </label>
         </section>
 
         <section>
             <label>
                 <span>Keywords:</span>
-                <TagsInput datalist={tags} selectedTags={keywords} setSelectedTags={setKeywords} />
+                <TagsInput datalist={tags} selectedTags={values.tags} setSelectedTags={tags => setValues({ ...values, tags })} />
             </label>
         </section>
 
@@ -32,14 +30,24 @@ const Form = () => {
             <div>
                 <label>
                     <span>Bid amount:</span>
-                    <Input type='number' $unit='$' />
+                    <Input
+                        type='number'
+                        $unit='$'
+                        value={values.bidAmount}
+                        onChange={e => setValues({ ...values, bidAmount: Number(e.target.value) })}
+                    />
                 </label>
             </div>
 
             <div>
                 <label>
                     <span>Campaign founds:</span>
-                    <Input type='number' $unit='$' />
+                    <Input
+                        type='number'
+                        $unit='$'
+                        value={values.campaignFund}
+                        onChange={e => setValues({ ...values, campaignFund: Number(e.target.value) })}
+                    />
                 </label>
             </div>
         </section>
@@ -61,7 +69,12 @@ const Form = () => {
             <div>
                 <label>
                     <span>Radius:</span>
-                    <Input type='number' $unit='km' />
+                    <Input
+                        type='number'
+                        $unit='km'
+                        value={values.radius}
+                        onChange={e => setValues({ ...values, radius: Number(e.target.value) })}
+                    />
                 </label>
             </div>
         </section>

@@ -10,11 +10,11 @@ const EditActions = ({ isFormValid, campaignID }: { isFormValid: boolean, campai
         <div className="column">
             <hr />
 
-            <Button $variant='remove' onClick={() => navigate(`/confirm-remove/${campaignID}`)}>Remove campaign</Button>
+            <Button $variant='remove' type='button' onClick={() => navigate(`/confirm-remove/${campaignID}`)}>Remove campaign</Button>
         </div>
 
         <div className="column">
-            <Button $variant='secondary' onClick={() => navigate('/')}>Cancel</Button>
+            <Button $variant='secondary' type='button' onClick={() => navigate('/')}>Cancel</Button>
             <Button $variant='primary' type='submit' disabled={!isFormValid}>Save changes</Button>
         </div>
     </StyledEditActions>

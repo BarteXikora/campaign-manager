@@ -29,10 +29,19 @@ export const appSlice = createSlice({
                     c.id !== action.payload
                 )
             }
+        },
+
+        setActive: (state, action: PayloadAction<{ id: string, setActive: boolean }>) => {
+            return {
+                ...state,
+                campaigns: state.campaigns.map(c =>
+                    c.id === action.payload.id ? { ...c, statusActive: action.payload.setActive } : c
+                )
+            }
         }
 
     }
 })
 
 export default appSlice.reducer
-export const { addCampaign, editCampaign, removeCampaign } = appSlice.actions
+export const { addCampaign, editCampaign, removeCampaign, setActive } = appSlice.actions

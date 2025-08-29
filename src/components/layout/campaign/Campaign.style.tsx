@@ -87,7 +87,7 @@ const StyledCampaign = styled.li`
         gap: ${({ theme }) => theme.spaces.small};
 
         & > :nth-child(1) { grid-area: 1 / 1; } 
-        & > :nth-child(6) { grid-area: 1 / 2; } 
+        & > :nth-child(6) { grid-area: 1 / 2; align-self: start; } 
         & > :nth-child(2) { grid-area: 2 / 1; }
         & > :nth-child(3) { grid-area: 2 / 2; }
         & > :nth-child(4) { grid-area: 3 / 1; }

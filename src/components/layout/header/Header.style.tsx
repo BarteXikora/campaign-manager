@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
     .logo {
         font-weight: bold;
         font-size: ${({ theme }) => theme.fontSizes.title};
-        padding: ${({ theme }) => theme.spaces.medium + ' ' + theme.spaces.xBig};
+        padding: ${({ theme }) => theme.spaces.big + ' ' + theme.spaces.xBig};
     }
 
     .data-box {
@@ -49,6 +49,8 @@ const StyledHeader = styled.header`
     }
 
     @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {
+        position: sticky;
+        top: 0;
         margin-top: 0;
         margin-bottom: ${({ theme }) => theme.spaces.medium};
         border-radius: 0;

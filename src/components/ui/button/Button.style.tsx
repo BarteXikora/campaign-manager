@@ -37,6 +37,15 @@ const tertiaryStyles = css`
     }
 `
 
+const removeStyles = css`
+    background-color: ${({ theme }) => theme.colors.black};
+    color:  ${({ theme }) => theme.colors.white};
+
+    &:hover {
+        background-color: ${({ theme }) => theme.colors.wrong};
+    }
+`
+
 const StyledButton = styled.button<TButton>`
     display: flex;
     align-items: center;
@@ -52,6 +61,7 @@ const StyledButton = styled.button<TButton>`
     ${({ $variant }) => $variant === 'primary' && primaryStyles}
     ${({ $variant }) => $variant === 'secondary' && secondaryStyles}
     ${({ $variant }) => $variant === 'tertiary' && tertiaryStyles}
+    ${({ $variant }) => $variant === 'remove' && removeStyles}
 
     ${({ disabled }) => disabled && disabledStyles}
 

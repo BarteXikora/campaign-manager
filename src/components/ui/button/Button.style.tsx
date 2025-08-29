@@ -39,7 +39,9 @@ const tertiaryStyles = css`
 
 const StyledButton = styled.button<TButton>`
     display: flex;
-    padding: ${({ theme }) => theme.spaces.small} ${({ theme }) => theme.spaces.medium};
+    align-items: center;
+    justify-content: center;
+    padding: ${({ theme }) => theme.spaces.medium} ${({ theme }) => theme.spaces.big};
     border-radius: ${({ theme }) => theme.borderRadiuses.small};
     border: none;
     color: ${({ theme }) => theme.colors.black};
@@ -52,6 +54,10 @@ const StyledButton = styled.button<TButton>`
     ${({ $variant }) => $variant === 'tertiary' && tertiaryStyles}
 
     ${({ disabled }) => disabled && disabledStyles}
+
+     @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {
+        padding: ${({ theme }) => theme.spaces.big} ${({ theme }) => theme.spaces.xBig};
+     }
 `
 
 export default StyledButton

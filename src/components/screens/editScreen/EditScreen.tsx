@@ -27,7 +27,7 @@ const EditScreen = () => {
 
     return (
         <>
-            <EditHeader />
+            <EditHeader name={campaign[0].name} />
             <form onSubmit={e => handleSubmit(e)}>
                 <Form values={form} setValues={setForm} validationMessage={validationMessage} />
                 <EditActions isFormValid={isFormValid} campaignID={campaignID || ''} />

@@ -3,11 +3,11 @@ import Toggler from '../../ui/toggler/Toggler'
 
 import { useState } from 'react'
 
-const EditHeader = () => {
+const EditHeader = ({ name }: { name: string }) => {
     const [isCapaignOn, setIsCampaignOn] = useState<boolean>(true)
 
     return <TitleBar>
-        <h2>Edit campaign: <i>Example Capaign Name</i></h2>
+        <h2>Edit campaign: <i>{name}</i></h2>
 
         <div className='actions-box'>
             <span>

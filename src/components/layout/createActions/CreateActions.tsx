@@ -1,9 +1,13 @@
 import StyledCreateActions from './CreateActions.style'
 import Button from '../../ui/button/Button'
 
+import { useNavigate } from 'react-router-dom'
+
 const CreateActions = () => {
+    const navigate = useNavigate()
+
     return <StyledCreateActions>
-        <Button $variant='tertiary'>Cancel</Button>
+        <Button $variant='tertiary' onClick={() => navigate('/')}>Cancel</Button>
         <Button $variant='primary' type='submit'>Create new campaign</Button>
     </StyledCreateActions>
 }

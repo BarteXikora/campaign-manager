@@ -1,5 +1,5 @@
 import AppTheme from './theme/AppTheme'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import View from './components/layout/view/View'
 import ListScreen from './components/screens/listScreen/ListScreen'
@@ -16,6 +16,7 @@ const App = () => {
           <Route path='/create' element={<CreateScreen />} />
           <Route path='/edit/:id' element={<EditScreen />} />
           <Route path='/confirm-remove/:id' element={<ConfirmRemoveScreen />} />
+          <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>
     </BrowserRouter>

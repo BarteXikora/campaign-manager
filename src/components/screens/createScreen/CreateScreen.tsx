@@ -14,7 +14,7 @@ const CreateScreen = () => {
 
     const emeraldAccount = useSelector(state => state.emeraldAccount)
 
-    const { form, setForm, isFormValid, validationMessage } = useValidation(emeraldAccount)
+    const { form, setForm, isFormValid, validationMessage } = useValidation(emeraldAccount.leftFounds)
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault()

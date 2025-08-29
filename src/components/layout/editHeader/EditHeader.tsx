@@ -1,4 +1,4 @@
-import StyledEditHeader from './EditHeader.style'
+import TitleBar from '../titleBar/TitleBar'
 import Toggler from '../../ui/toggler/Toggler'
 
 import { useState } from 'react'
@@ -6,7 +6,7 @@ import { useState } from 'react'
 const EditHeader = () => {
     const [isCapaignOn, setIsCampaignOn] = useState<boolean>(true)
 
-    return <StyledEditHeader>
+    return <TitleBar>
         <h2>Edit campaign: <i>Example Capaign Name</i></h2>
 
         <div className='actions-box'>
@@ -23,7 +23,7 @@ const EditHeader = () => {
 
             <Toggler checked={isCapaignOn} onChange={event => setIsCampaignOn(event.target.checked)} />
         </div>
-    </StyledEditHeader>
+    </TitleBar>
 }
 
 export default EditHeader

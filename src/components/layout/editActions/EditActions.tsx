@@ -6,7 +6,7 @@ const EditActions = () => {
         <div className="column">
             <hr />
 
-            <Button $variant='secondary'>Remove campaign</Button>
+            <Button $variant='remove'>Remove campaign</Button>
         </div>
 
         <div className="column">

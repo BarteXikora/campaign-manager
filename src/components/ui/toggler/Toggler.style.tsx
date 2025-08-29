@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 const StyledToggler = styled.label`
     position: relative;
-    background-color: orange;
     cursor: pointer;
 
     input {

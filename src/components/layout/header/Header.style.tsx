@@ -54,6 +54,7 @@ const StyledHeader = styled.header`
         margin-top: 0;
         margin-bottom: ${({ theme }) => theme.spaces.medium};
         border-radius: 0;
+        z-index: 1000;
 
         .logo {
             padding: ${({ theme }) => theme.spaces.big}  ${({ theme }) => theme.spaces.medium};

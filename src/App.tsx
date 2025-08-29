@@ -1,3 +1,6 @@
+import { Provider } from 'react-redux'
+import { store } from './store/store'
+
 import AppTheme from './theme/AppTheme'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
@@ -8,19 +11,21 @@ import EditScreen from './components/screens/editScreen/EditScreen'
 import ConfirmRemoveScreen from './components/screens/confirmRemoveScreen/ConfirmRemoveScreen'
 
 const App = () => {
-  return <AppTheme>
-    <BrowserRouter>
-      <Routes>
-        <Route element={<View />}>
-          <Route path='/' element={<ListScreen />} />
-          <Route path='/create' element={<CreateScreen />} />
-          <Route path='/edit/:id' element={<EditScreen />} />
-          <Route path='/confirm-remove/:id' element={<ConfirmRemoveScreen />} />
-          <Route path='*' element={<Navigate to='/' />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </AppTheme>
+  return <Provider store={store}>
+    <AppTheme>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<View />}>
+            <Route path='/' element={<ListScreen />} />
+            <Route path='/create' element={<CreateScreen />} />
+            <Route path='/edit/:id' element={<EditScreen />} />
+            <Route path='/confirm-remove/:id' element={<ConfirmRemoveScreen />} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AppTheme>
+  </Provider>
 }
 
 export default App

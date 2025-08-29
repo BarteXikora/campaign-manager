@@ -1,4 +1,5 @@
-type TCampaignProps = {
+export type TCampaign = {
+    id: string
     name: string
     tags: string[]
     statusActive: boolean
@@ -8,6 +9,9 @@ type TCampaignProps = {
     radius: number
 }
 
-export type TCampaign = TCampaignProps & { id: string }
+type TState = {
+    emeraldAccount: number
+    campaigns: TCampaign[]
+}
 
-export default TCampaignProps
+export default TState

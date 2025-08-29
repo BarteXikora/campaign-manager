@@ -1,6 +1,6 @@
 import StyledCampaign from './Campaign.style'
 import Button from '../../ui/button/Button'
-import { TCampaign } from './campaign.types'
+import { TCampaign } from '../../../store/state.types'
 
 import { useNavigate } from 'react-router-dom'
 

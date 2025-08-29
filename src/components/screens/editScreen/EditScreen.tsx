@@ -18,7 +18,7 @@ const EditScreen = () => {
     const campaign = useSelector(state => state.campaigns.filter(c => c.id === campaignID))
     const emeraldAccount = useSelector(state => state.emeraldAccount)
 
-    const { form, setForm, isFormValid, validationMessage } = useValidation(emeraldAccount, campaign.length === 1 ? campaign[0] : undefined)
+    const { form, setForm, isFormValid, validationMessage } = useValidation(emeraldAccount.leftFounds, campaign.length === 1 ? campaign[0] : undefined)
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault()

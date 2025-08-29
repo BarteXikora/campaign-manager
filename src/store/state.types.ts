@@ -9,8 +9,13 @@ export type TCampaign = {
     radius: number
 }
 
+export type TEmeraldAccount = {
+    allFound: number
+    leftFounds: number
+}
+
 type TState = {
-    emeraldAccount: number
+    emeraldAccount: TEmeraldAccount
     campaigns: TCampaign[]
     towns: { id: string, name: string }[]
     tags: string[]

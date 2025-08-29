@@ -1,7 +1,7 @@
 import TState from './state.types'
 
 const initialState: TState = {
-    emeraldAccount: 1500,
+    emeraldAccount: { allFound: 10000, leftFounds: 0 },
     campaigns: [
         {
             id: '1',

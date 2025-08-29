@@ -38,10 +38,20 @@ export const appSlice = createSlice({
                     c.id === action.payload.id ? { ...c, statusActive: action.payload.setActive } : c
                 )
             }
+        },
+
+        recalculateEmeraldAccount: (state, action: PayloadAction) => {
+            let sum = 0
+
+            for (const campaign of state.campaigns) sum += campaign.campaignFund
+
+            const leftFounds = state.emeraldAccount.allFound - sum
+
+            return { ...state, emeraldAccount: { ...state.emeraldAccount, leftFounds } }
         }
 
     }
 })
 
 export default appSlice.reducer
-export const { addCampaign, editCampaign, removeCampaign, setActive } = appSlice.actions
+export const { addCampaign, editCampaign, removeCampaign, setActive, recalculateEmeraldAccount } = appSlice.actions

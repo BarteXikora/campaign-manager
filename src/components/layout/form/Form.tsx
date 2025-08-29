@@ -56,13 +56,7 @@ const Form = ({ values, setValues, validationMessage }: TFormProps) => {
             <div>
                 <label>
                     <span>Town:</span>
-                    <Select>
-                        <>
-                            {
-                                towns.map(town => <option key={town.id} value={town.name}>{town.name}</option>)
-                            }
-                        </>
-                    </Select>
+                    <Select options={towns} value={values.town} setValue={town => setValues({ ...values, town })} />
                 </label>
             </div>
 

@@ -1,13 +1,12 @@
 import StyledSelect from './Select.style'
+import TSelectProps from './Select.types'
 
-type TOption = React.ReactElement<HTMLOptionElement>
-
-type TSelectChildren = TOption | TOption[]
-
-const Select = ({ children }: { children: TSelectChildren }) => {
+const Select = ({ options, value, setValue }: TSelectProps) => {
     return <StyledSelect>
-        <select>
-            {children}
+        <select value={value} onChange={e => setValue(e.target.value)}>
+            {
+                options.map(option => <option key={option.id} value={option.name}>{option.name}</option>)
+            }
         </select>
     </StyledSelect>
 }

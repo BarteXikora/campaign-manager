@@ -5,14 +5,12 @@ import { useDispatch } from '../../../store/store'
 import { setActive } from '../../../store/appSlice'
 import { TCampaign } from '../../../store/state.types'
 
-const EditHeader = ({ campaign }: { campaign: TCampaign | null }) => {
+const EditHeader = ({ campaign }: { campaign: TCampaign }) => {
     const dispatch = useDispatch()
 
     const handleSetActive = (isChecked: boolean) => {
         if (campaign) dispatch(setActive({ id: campaign.id, setActive: isChecked }))
     }
-
-    if (!campaign) return <></>
 
     return <TitleBar>
         <h2>Edit campaign: <i>{campaign.name}</i></h2>

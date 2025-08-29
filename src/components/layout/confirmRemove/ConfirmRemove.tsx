@@ -4,6 +4,7 @@ import Button from '../../ui/button/Button'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from '../../../store/store'
 import { removeCampaign } from '../../../store/appSlice'
+import NotFound from '../notFound/NotFound'
 
 const ConfirmRemove = () => {
     const dispatch = useDispatch()
@@ -18,8 +19,10 @@ const ConfirmRemove = () => {
         navigate('/')
     }
 
+    if (campaign.length === 0) return <NotFound />
+
     return <StyledConfirmRemove>
-        <h1>Are you certain you want to remove the campaign: <i>{campaign.length > 0 ? campaign[0].name : ''}</i>?</h1>
+        <h1>Are you certain you want to remove the campaign: <i>{campaign[0].name}</i>?</h1>
 
         <p>This action is irreversible.</p>
 

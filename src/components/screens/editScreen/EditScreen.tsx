@@ -1,6 +1,7 @@
 import EditHeader from '../../layout/editHeader/EditHeader'
 import Form from '../../layout/form/Form'
 import EditActions from '../../layout/editActions/EditActions'
+import NotFound from '../../layout/notFound/NotFound'
 
 import { FormEvent } from 'react'
 import useValidation from '../../../hooks/useValidation/useValidation'
@@ -25,9 +26,11 @@ const EditScreen = () => {
         navigate('/')
     }
 
+    if (campaign.length === 0) return <NotFound />
+
     return (
         <>
-            <EditHeader campaign={campaign.length > 0 ? campaign[0] : null} />
+            <EditHeader campaign={campaign[0]} />
             <form onSubmit={e => handleSubmit(e)}>
                 <Form values={form} setValues={setForm} validationMessage={validationMessage} />
                 <EditActions isFormValid={isFormValid} campaignID={campaignID || ''} />

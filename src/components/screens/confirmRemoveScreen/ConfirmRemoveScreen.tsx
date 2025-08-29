@@ -1,6 +1,8 @@
+import ConfirmRemove from '../../layout/confirmRemove/ConfirmRemove'
+
 const ConfirmRemoveScreen = () => {
     return <>
-        ConfirmRemoveScreen
+        <ConfirmRemove />
     </>
 }
 

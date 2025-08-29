@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import View from './components/layout/view/View'
 import ListScreen from './components/screens/listScreen/ListScreen'
 import CreateScreen from './components/screens/createScreen/CreateScreen'
+import EditScreen from './components/screens/editScreen/EditScreen'
 
 const App = () => {
   return <AppTheme>
@@ -12,6 +13,7 @@ const App = () => {
         <Route element={<View />}>
           <Route path='/' element={<ListScreen />} />
           <Route path='/create' element={<CreateScreen />} />
+          <Route path='/edit/:id' element={<EditScreen />} />
         </Route>
       </Routes>
     </BrowserRouter>

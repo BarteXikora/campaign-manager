@@ -7,7 +7,7 @@ import Select from '../../ui/select/Select'
 import { useSelector } from '../../../store/store'
 import TFormProps from './Form.types'
 
-const Form = ({ values, setValues }: TFormProps) => {
+const Form = ({ values, setValues, validationMessage }: TFormProps) => {
     const tags = useSelector(state => state.tags)
     const towns = useSelector(state => state.towns)
 
@@ -77,6 +77,10 @@ const Form = ({ values, setValues }: TFormProps) => {
                     />
                 </label>
             </div>
+        </section>
+
+        <section>
+            {validationMessage}
         </section>
     </StyledForm>
 }

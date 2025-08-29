@@ -1,9 +1,12 @@
 import StyledHeader from './Header.style'
 
-import { useSelector } from '../../../store/store'
+import { useSelector, useDispatch } from '../../../store/store'
+import { recalculateEmeraldAccount } from '../../../store/appSlice'
 import { useState, useEffect } from 'react'
 
 const Header = () => {
+    const dispatch = useDispatch()
+
     const state = useSelector(state => state)
 
     const [allCampaigntCnt, setAllCampaignsCnt] = useState<number>(0)
@@ -14,6 +17,11 @@ const Header = () => {
         setActiveCampaignsCnt(state.campaigns.filter(c => c.statusActive).length)
 
     }, [state.campaigns])
+
+    useEffect(() => {
+        dispatch(recalculateEmeraldAccount())
+
+    }, [state.campaigns, dispatch])
 
     return <StyledHeader>
         <div className="logo">CampaignManager</div>
@@ -31,7 +39,7 @@ const Header = () => {
 
             <div className="emerald-account">
                 <span className='title'>Emerald Account: </span>
-                <span className='value'>{state.emeraldAccount} $</span>
+                <span className='value'>{state.emeraldAccount.leftFounds} $</span>
             </div>
         </div>
     </StyledHeader>

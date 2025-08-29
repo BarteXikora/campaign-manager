@@ -1,11 +1,14 @@
-import CreateFormHeader from '../../layout/createFormHeader/CreateFormHeader'
+import TitleBar from '../../layout/titleBar/TitleBar'
 import Form from '../../layout/form/Form'
 import CreateActions from '../../layout/createActions/CreateActions'
 
 const CreateScreen = () => {
     return (
         <>
-            <CreateFormHeader />
+            <TitleBar>
+                <h2>Create new campaign:</h2>
+            </TitleBar>
+
             <form>
                 <Form />
                 <CreateActions />

@@ -20,10 +20,19 @@ export const appSlice = createSlice({
                     c.id === id ? action.payload : c
                 )
             }
+        },
+
+        removeCampaign: (state, action: PayloadAction<string>) => {
+            return {
+                ...state,
+                campaigns: state.campaigns.filter(c =>
+                    c.id !== action.payload
+                )
+            }
         }
 
     }
 })
 
 export default appSlice.reducer
-export const { addCampaign, editCampaign } = appSlice.actions
+export const { addCampaign, editCampaign, removeCampaign } = appSlice.actions

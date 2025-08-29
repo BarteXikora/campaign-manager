@@ -11,6 +11,10 @@ const StyledForm = styled.main`
     label {
         display: flex;
         flex-direction: column;
+
+        span {
+            font-size: ${({ theme }) => theme.fontSizes.small}
+        }
     }
 
     .columns {

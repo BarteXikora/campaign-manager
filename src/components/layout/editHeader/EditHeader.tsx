@@ -1,27 +1,35 @@
 import TitleBar from '../titleBar/TitleBar'
 import Toggler from '../../ui/toggler/Toggler'
 
-import { useState } from 'react'
+import { useDispatch } from '../../../store/store'
+import { setActive } from '../../../store/appSlice'
+import { TCampaign } from '../../../store/state.types'
 
-const EditHeader = ({ name }: { name: string }) => {
-    const [isCapaignOn, setIsCampaignOn] = useState<boolean>(true)
+const EditHeader = ({ campaign }: { campaign: TCampaign | null }) => {
+    const dispatch = useDispatch()
+
+    const handleSetActive = (isChecked: boolean) => {
+        if (campaign) dispatch(setActive({ id: campaign.id, setActive: isChecked }))
+    }
+
+    if (!campaign) return <></>
 
     return <TitleBar>
-        <h2>Edit campaign: <i>{name}</i></h2>
+        <h2>Edit campaign: <i>{campaign.name}</i></h2>
 
         <div className='actions-box'>
             <span>
                 Status:
 
                 {
-                    isCapaignOn ?
+                    campaign.statusActive ?
                         <div className="on">On</div>
                         :
                         <div className="off">Off</div>
                 }
             </span>
 
-            <Toggler checked={isCapaignOn} onChange={event => setIsCampaignOn(event.target.checked)} />
+            <Toggler checked={campaign.statusActive} onChange={event => handleSetActive(event.target.checked)} />
         </div>
     </TitleBar>
 }

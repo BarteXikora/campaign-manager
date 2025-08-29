@@ -8,7 +8,12 @@ const StyledCreateActions = styled.div`
 
     @media (max-width: ${({ theme }) => theme.screenBreakpoints.tablet}) {
         padding: 0 ${({ theme }) => theme.spaces.medium};
-        margin-bottom: ${({ theme }) => theme.spaces.xBig};
+        margin: ${({ theme }) => theme.spaces.xBig} 0;
+        justify-content: space-between;
+
+        button {
+            flex: auto;
+        }
     }
 `
 

@@ -49,7 +49,7 @@ const useValidation = (emeraldAccount: number, defaultData?: TCampaign) => {
     useEffect(() => {
         if (defaultData) setForm(defaultData)
 
-    }, [defaultData])
+    }, [])
 
     useEffect(() => {
         setIsFormValid(validateForm())

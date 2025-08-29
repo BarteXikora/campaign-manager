@@ -1,5 +1,5 @@
 type TButton = {
-    $variant: 'primary' | 'secondary' | 'tertiary';
+    $variant: 'primary' | 'secondary' | 'tertiary' | 'remove';
     disabled?: boolean;
 }
 

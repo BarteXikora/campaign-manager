@@ -1,30 +1,31 @@
 import TState from './state.types'
+import { v4 as uuid } from 'uuid'
 
 const initialState: TState = {
-    emeraldAccount: { allFound: 10000, leftFounds: 0 },
+    emeraldAccount: { allFound: 5000, leftFounds: 0 },
     campaigns: [
         {
-            id: '1',
-            name: 'Test campaign',
-            tags: ['tag1', 'tag2', 'tag3', 'tag4'],
+            id: uuid(),
+            name: 'T-Shirts and Blouses',
+            tags: ['T-Shirts', 'Blouses'],
             statusActive: true,
-            bidAmount: 1.5,
-            campaignFund: 1000,
-            town: 'New York',
+            bidAmount: 0.65,
+            campaignFund: 2000,
+            town: 'Kraków',
             radius: 20
         }, {
-            id: '2',
-            name: 'Example Campaign Name',
-            tags: ['tag1', 'tag2'],
+            id: uuid(),
+            name: 'Warsaw Shoes',
+            tags: ['Shoes'],
             statusActive: false,
             bidAmount: 0.5,
-            campaignFund: 500,
-            town: 'Cracow',
+            campaignFund: 100,
+            town: 'Warszawa',
             radius: 5
         }
     ],
-    towns: [{ id: '0', name: 'Kraków' }, { id: '1', name: 'Warszawa' }, { id: '2', name: 'Gdańsk' }],
-    tags: ['Example', 'Tag', 'Names']
+    towns: [{ id: '0', name: 'Kraków' }, { id: '1', name: 'Warszawa' }, { id: '2', name: 'Gdańsk' }, { id: '3', name: 'Radom' }, { id: '4', name: 'Poznań' }],
+    tags: ['Shoes', 'Pants', 'T-Shirts', 'Blouses', 'Dresses']
 }
 
 export default initialState

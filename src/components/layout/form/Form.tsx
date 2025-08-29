@@ -4,12 +4,14 @@ import Input from '../../ui/input/Input'
 import TagsInput from '../../ui/tagsInput/TagsInput'
 import Select from '../../ui/select/Select'
 
+import { useSelector } from '../../../store/store'
 import { useState } from 'react'
-
-const __datalist = ['Exaple', 'Test', 'Demo', 'Sample', 'Mockup', 'Prototype']
 
 const Form = () => {
     const [keywords, setKeywords] = useState<string[]>([])
+
+    const tags = useSelector(state => state.tags)
+    const towns = useSelector(state => state.towns)
 
     return <StyledForm>
         <section>
@@ -22,7 +24,7 @@ const Form = () => {
         <section>
             <label>
                 <span>Keywords:</span>
-                <TagsInput datalist={__datalist} selectedTags={keywords} setSelectedTags={setKeywords} />
+                <TagsInput datalist={tags} selectedTags={keywords} setSelectedTags={setKeywords} />
             </label>
         </section>
 
@@ -47,11 +49,11 @@ const Form = () => {
                 <label>
                     <span>Town:</span>
                     <Select>
-                        <option value="new_york">New York</option>
-                        <option value="los_angeles">Los Angeles</option>
-                        <option value="chicago">Chicago</option>
-                        <option value="houston">Houston</option>
-                        <option value="miami">Miami</option>
+                        <>
+                            {
+                                towns.map(town => <option key={town.id} value={town.name}>{town.name}</option>)
+                            }
+                        </>
                     </Select>
                 </label>
             </div>

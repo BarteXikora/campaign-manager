@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledEditHeader = styled.header`
+const StyledTitleBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,4 +49,4 @@ const StyledEditHeader = styled.header`
     }
 `
 
-export default StyledEditHeader
+export default StyledTitleBar

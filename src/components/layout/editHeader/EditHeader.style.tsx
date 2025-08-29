@@ -42,6 +42,10 @@ const StyledEditHeader = styled.header`
         h2, .actions-box {
             padding: 0;
         }
+
+        .actions-box {
+            flex-direction: column-reverse;
+        }
     }
 `
 

@@ -4,7 +4,7 @@ const StyledCreateFormHeader = styled.header`
     margin-bottom: ${({ theme }) => theme.spaces.medium};
 
     h2 {
-        padding: 0 ${({ theme }) => theme.spaces.xBig};
+        padding: ${({ theme }) => theme.spaces.small} ${({ theme }) => theme.spaces.xBig};
         font-size: ${({ theme }) => theme.fontSizes.title};
         font-size: bold;
         margin: 0;

@@ -8,8 +8,6 @@ import {
 
 import appSlice from './appSlice'
 
-alert('store')
-
 export const store = configureStore({ reducer: appSlice })
 
 export const useSelector: TypedUseSelectorHook<ReturnType<typeof store.getState>> = useDefaultSelector
